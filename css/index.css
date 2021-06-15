@@ -211,8 +211,8 @@ top:-30px; right:0;}
     background-image:url(../imges/btn_more.png);
     background-repeat: no-repeat;
     position:absolute;
-    top:50%; left:50%;
-    transform:translate(-50%,-50%);
+    top:100%; left:50%;
+    transform:translate(-50%);
     opacity: 0; transition: all 0.5s;
 }   
 #main .subwaymenu .content li:hover a::after{
