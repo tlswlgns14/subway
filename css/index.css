@@ -1,0 +1,426 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0%; box-sizing: border-box;}
+ul{list-style: none;}
+a {text-decoration: none; color: inherit;}
+img { max-width:100%; vertical-align:middle }
+.inner { max-width:1170px; margin:0 auto; }
+.cf::after { content:''; display:block; clear:both }
+body { font-size:16px; color:#666; }
+
+#header { border-top: 5px solid #009223; }
+#header .inner {position: relative;}
+h1 {text-align: center ; padding:30px 0px; }
+
+.membership { position: absolute; top:50px; right:0; 
+    color: #666666;
+    font-size: 13px;  
+    }
+    .membership a { padding:0 15px;
+         /*높이가 다른 인라인요소들을 중간선에 맞추기 위한 속성  */
+        vertical-align: middle;
+    }
+    .membership a:last-child { 
+        /* padding:0 0 0 5px */
+        padding-left:5px;
+        padding-right:0px;
+    
+    }
+    .membership a:nth-child(2) { position:relative}
+    .membership a:nth-child(2)::after {
+        content:'';
+         position: absolute; top:50%;
+         left:-3px;
+         width: 3px; height: 3px; background: #ddd;
+         margin-top: -1.5px;
+    }
+
+
+/* 1단계메뉴 */
+
+#nav .depth1 > li{
+    /* display: inline-block; */
+    float:left; 
+    text-align: center;
+    width:16.6666%;
+    border: 0px solid #000;
+    position: relative;
+}
+#nav .depth1 > li > a{
+    display: block; 
+    font-size: 18px;
+    color: #292929;
+    font-weight: bold;
+    letter-spacing: -0.72px;  
+    padding: 30px 0px; 
+}
+#nav .depth1 > li:hover >a{
+    color:#009223;
+}
+
+/* 2단계 메뉴 */
+#nav .depth2 {
+    position: absolute;
+    top:100%; width: 100%; height: 0px; overflow:hidden; opacity: 0;
+    left: 0;
+    border:0px solid #000;
+    background: #fff;
+    padding:20px 0px;
+    /* display: none; */
+    z-index: 99;
+    font-size: 15px;
+    color:#666   ;
+    border-top:1px solid #e5e5e5;
+    transition: all 0.3s;
+}
+
+#nav  .depth1:hover > li > .depth2{
+    /* display: block; */
+    height: 244px; opacity:1; 
+}
+
+#nav .depth2 > li{
+    line-height: 2.3em;
+}
+#nav .depth2 > li:hover {
+    text-decoration:underline ;
+    color:#009223;
+}
+
+#nav { position:relative }
+#nav .bgbox{
+    width: 100%; height:0px;
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    position:absolute;
+    top:100%; z-index: 98;
+    /* display: none; */
+    transition: all 0.3s;
+}
+#nav .depth1:hover + .bgbox {
+    /* display: block; */
+    height: 244px;
+}
+
+/* 슬라이드 */
+#main .slideOuter{
+    height: 436.09px;
+    overflow: hidden;
+}
+/* 매장찾기 */
+#main .store {position:relative; height: 80px;}
+#main .storeinfo {position: absolute;
+top:-30px; right:0;}
+
+#main .storeinfo > div {
+    width:300px; float: left; height: 80px;
+    text-align: center; font-size: 22px;
+    line-height: 80px; font-weight: bold;
+}
+#main .storeinfo > div:first-child {
+    background-color:#ffce32; color: #000;
+    border-radius:30px 0 0 0;
+}
+#main .storeinfo > div:last-child {
+    background-color:#009223; color: #fff;
+    border-radius: 0 0 30px 0;
+}
+#main .storeinfo > div > a { display: block;
+    height: 80px; text-align: center; font-size: 22px;
+    line-height: 80px; letter-spacing: -2px;
+}
+/* 서브웨이 메뉴 */
+#main .subwaymenu { padding-top:40px }
+#main .subwaymenu > div { position:relative; max-width: 1230px; margin:0 auto}
+#main .subwaymenu h2{
+    font-size: 40px;
+    background-image:url(../imges/bul_tit.png);
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    color:#000;
+}
+
+#main .subwaymenu .title{
+    position:absolute; right:0;
+    top:20px;
+}
+#main .subwaymenu .title li { float:left; 
+    padding:0 20px; font-weight: bold;
+    cursor: pointer; position:relative
+}
+#main .subwaymenu .title li.active{
+    color:#009223
+}
+
+#main .subwaymenu .title li:last-child{
+    padding-right: 0;
+}
+#main .subwaymenu .title li::after {
+    content:'';
+    width:1px; height: 13px; background-color: #ddd;
+    position:absolute; top:5px; right:0;
+    
+}
+#main .subwaymenu .title li:last-child::after{
+    display: none;
+}
+
+
+#main .subwaymenu .content { padding:30px 0 50px}
+#main .subwaymenu .content ul { overflow: hidden;}
+#main .subwaymenu .content li {
+    width:25%; float:left; padding:20px 0;
+  text-align: center; position:relative; 
+  overflow:hidden;
+}
+#main .subwaymenu .content li img { transition:all 0.5s }
+#main .subwaymenu .content li strong {
+    font-size: 18px;
+    color:#292929;
+    transition:all 0.5s;
+}
+#main .subwaymenu .content li p{
+    font-size: 13px;
+    color:#999;
+    padding: 15px 20px 0;
+    transition: all 0.5s;
+}
+#main .subwaymenu .content > div {
+    display: none;
+}
+#main .subwaymenu .content > div.cont1 {
+    display: block;}
+
+    #main .subwaymenu .content >div:target{
+        display: block;
+    }
+
+#main .subwaymenu .content li:hover p {
+    opacity: 0;
+}
+#main .subwaymenu .content li:hover strong {
+    display: inline-block;
+    transform: scale(1.5) translateY(15px) 
+}
+#main .subwaymenu .content li:hover img {
+    transform: scale(1.2)
+}
+#main .subwaymenu .content li a::after{
+    content:'';
+    width: 98px; height: 98px;
+    background-image:url(../imges/btn_more.png);
+    background-repeat: no-repeat;
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    opacity: 0; transition: all 0.5s;
+}   
+#main .subwaymenu .content li:hover a::after{
+    opacity: 1;
+}
+
+/* 써브웨이 히스토리 */
+#main .introduce {
+    background-image: url(../imges/bg_content.gif);
+    padding:80px 0;
+
+}
+#main .introduce .kim {
+    float:left; 
+    background-repeat: no-repeat;
+}
+#main .introduce .one { 
+    width:33%; position:relative
+}
+#main .introduce .two { 
+    width:67%; position:relative
+}
+#main .introduce .three { 
+    width:70%; overflow: hidden;
+    background-color: #fff;
+    height: 292.5px; margin-top: 30px;
+    border-radius: 35px 0 35px 0;
+    padding:70px;
+}
+#main .introduce .three .what {
+    width:45%; float: left; padding-right:100px;
+}
+#main .introduce .three .what h2{
+    font-size:30px; color:#292929;
+    background-image:url(../imges/bul_tit.png);
+    background-repeat: no-repeat;
+    height: 60px; padding:15px 0 0 23px;
+}
+#main .introduce .three .what p{
+    text-align: center;
+    letter-spacing:0px;
+    padding:15px
+}
+#main .introduce .three .news{
+    width:55%; float:left;
+}
+#main .introduce .three .news li{
+    color:#292929;
+    line-height:2.2em;
+    letter-spacing: -1px;   
+}
+#main .introduce .three .news li > a:hover{
+    color:#009223;
+}
+#main .introduce .three .news li > a{
+    position:relative;
+}
+#main .introduce .three .news li > a::after {
+content: '';
+width:0%; height: 1px; background-color:#009223;
+position:absolute; left:0; bottom:0;
+transition:all 0.5s;
+}
+#main .introduce .three .news li > a:hover::after {
+    width:100%;
+}
+
+#main .introduce .three .news > a {
+    font-size:14px;
+    color:#999;
+    display: inline-block; padding-top:20px}
+
+#main .introduce .four { 
+    width:22.5%; margin: 30px 5% 0 2.5%;
+    /* border-radius: 0 30px 0 30px;
+    overflow: hidden; */
+}
+#main .introduce .four img {
+    border-radius: 0 30px 0 30px;
+}
+
+
+
+#main .introduce .kim .tit {
+    font-size:28px; font-weight: bold;
+    line-height: 40px;
+    letter-spacing: -2px; color:#fff;
+    position:absolute; top:38px; left:38px;
+}
+#main .introduce .two .tit {
+    left:390px;
+}
+#main .introduce .kim .btn {
+    color:#fff;
+    position:absolute; bottom:38px; left:38px;
+    border:2px solid #fff;
+    display: inline-block;
+    padding:10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+#main .introduce .kim .btn:hover{
+    background-color: rgb(0,0,0,0.5);
+}
+#main .introduce .two .btn {
+    left:390px;
+}
+
+
+
+/* 써브웨이 안내 */
+#main .about .inner { overflow:hidden;
+    padding:40px 0px; text-align: center;
+}
+
+#main .about li {
+    float:left; width:25%; padding:0 20px;
+}
+#main .about li:last-child{
+    padding-right: 80px;
+}
+#main .about .icon{
+    width:70px; height:70px;
+    background-image:url(../imges/icon_quickmenu.png);
+    display: inline-block;
+    vertical-align: middle; margin-right: 10px;
+}
+#main .about li .text{
+    display: inline-block; text-align: left;
+    vertical-align: middle; 
+}
+#main .about li .text strong{
+    font-size: 18px;
+    color: #292929;
+}
+#main .about li .text p{
+    font-size: 13px;
+    color: #999; margin-top: 6px;
+    letter-spacing: -1px;
+}
+
+#main .about li:first-child .icon{
+    background-position:0 0;
+}
+#main .about li:nth-child(2) .icon{
+    background-position:-70px 0;
+}
+#main .about li:nth-child(3) .icon{
+    background-position:-140px 0;
+}
+#main .about li:last-child .icon{
+    background-position:-210px 0;
+}
+
+
+/* 하단구역 */
+#footer {
+    background:#292929; font-size: 14px;
+    letter-spacing: -1px;
+}
+#footer .bottommenu {
+    border-bottom:1px solid #666; 
+    padding:22px 0
+}
+#footer .bottommenu a{padding-right:30px;}
+#footer .bottommenu strong{color: #bbb;}
+#footer .info{
+    padding:22px 0;
+    position:relative;
+}
+#footer .info > div:first-child{
+    margin-bottom: 7px;
+}
+#footer .info .sns{
+    position:absolute; top:50%; transform:translateY(-50%);
+    right:0;
+}
+#footer .info .sns >div {
+    width:50px; height: 50px; display: inline-block;
+     margin:0 7px; 
+     
+
+}
+#footer .info .sns > div:first-child{
+    background-image: url(../imges/icon_sns_instar.png);   
+}
+#footer .info .sns > div:last-child{
+    background-image: url(../imges/icon_sns_facebook.png);
+}
+#footer .info .sns > div:hover {
+  background-position: -50px 0;
+}
+#footer .info > div:first-child span {
+    padding:0 7px; position: relative;
+}
+#footer .info > div:first-child span.addr {
+    padding-left: 0;
+}
+#footer .info > div:first-child span::after{
+    content: '';
+    position: absolute;
+    left:-2px;
+    top:5px;
+    width:2px;
+    height: 10px;
+    background-color: #666666;
+}
+#footer .info > div:first-child span.addr::after{
+    display: none;
+}
